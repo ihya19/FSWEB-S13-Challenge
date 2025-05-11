@@ -85,18 +85,18 @@ public class CompanyTest {
     public void testEmployeeInstanceTypes() throws NoSuchFieldException {
         assertThat(employee.getFullName(), instanceOf(String.class));
         assertThat(employee.getEmail(), instanceOf(String.class));
-        assertThat(employee.getHealthPlans(), instanceOf(String[].class));
+        assertThat(employee.getHealthplans(), instanceOf(String[].class));
     }
 
     @DisplayName("addHealthplan method başarılı çalışıyor mu?")
     @Test
     public void testAddHealthplanMethod() throws NoSuchFieldException {
-        employee.addHealthPlan(-1, "Test Sigorta");
-        assertEquals(!Arrays.asList(employee.getHealthPlans()).contains("Test Sigorta"), true);
-        employee.addHealthPlan(0, "Test Sigorta");
-        assertEquals(!Arrays.asList(employee.getHealthPlans()).contains("Test Sigorta"), true);
-        employee.addHealthPlan(1, "Test Sigorta");
-        assertEquals(Arrays.asList(employee.getHealthPlans()).contains("Test Sigorta"), true);
+        employee.addHealthplan(-1, "Test Sigorta");
+        assertEquals(!Arrays.asList(employee.getHealthplans()).contains("Test Sigorta"), true); // Burada "getHealthplans()" kullanmalısınız.
+        employee.addHealthplan(0, "Test Sigorta");
+        assertEquals(!Arrays.asList(employee.getHealthplans()).contains("Test Sigorta"), true);
+        employee.addHealthplan(1, "Test Sigorta");
+        assertEquals(Arrays.asList(employee.getHealthplans()).contains("Test Sigorta"), true);
     }
 
     @DisplayName("Company sınıf değişkenleri doğru access modifier a sahip mi ?")
